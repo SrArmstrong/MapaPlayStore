@@ -25,7 +25,6 @@ dist-ssr
 texto.txt
 .env
 
-android/
 ios/
 *.orig
 .DS_Store

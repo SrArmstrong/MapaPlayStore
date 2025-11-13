@@ -10,7 +10,6 @@ import pathPairs from '../../pathPairs';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import BuildingList from '../commons/BuildingList';
-import ProfesorList from "../commons/ProfesorList";
 import EventsList from "../commons/eventsList";
 import bus from "../../bus";
 import './mapstyle.css';
@@ -100,7 +99,7 @@ function MapComponent() {
     // Evitar recalcular ruta si el movimiento es muy pequeño (< 10m)
     if (currentLocationRef.current) {
       const movedDistance = getDistance(currentLocationRef.current, userLocation);
-      if (movedDistance < 10) return; // Ignorar pequeñas variaciones
+      if (movedDistance < 5) return;
     }
 
     setCurrentLocation(userLocation);
@@ -158,7 +157,7 @@ function MapComponent() {
     // Mostrar marcador de ubicación actual
     currentUserMarker = L.marker(userLocation, {
       icon: new L.Icon({
-        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png',
         shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
         iconSize: [20, 32],
         iconAnchor: [10, 32],
@@ -171,7 +170,8 @@ function MapComponent() {
         Lat: ${latitude.toFixed(6)}<br>
         Lng: ${longitude.toFixed(6)}<br>
         Precisión: ${Math.round(accuracy)} metros
-      `).openPopup();
+      `)
+      {/*.openPopup()*/};
 
     // Recalcular y recortar ruta conforme el usuario avanza
     if (lastRoute && window.currentPathNodes && window.currentPathNodes.length > 0) {
@@ -1155,7 +1155,7 @@ return (
       <div className="map-container">
         {/* Header con título y botón de regreso */}
         <header className="map-header">
-          <h1 className="map-title">Mapa UTEQ</h1>
+          <h1 className="map-title">Mapa</h1>
           <button
             onClick={() => navigate('/')}
             className="back-button"

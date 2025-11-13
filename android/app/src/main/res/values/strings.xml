@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">MapaTrue</string>
+    <string name="title_activity_main">MapaTrue</string>
+    <string name="package_name">com.uteq.mapa</string>
+    <string name="custom_url_scheme">com.uteq.mapa</string>
+</resources>

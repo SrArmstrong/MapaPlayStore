@@ -3,7 +3,7 @@ export const eventsData = [
   { 
     latitude: 20.657146, 
     longitude: -100.405382, 
-    title: 'Partido de Fútbol UTEQ', 
+    title: 'Partido de Fútbol', 
     description: 'Torneo interno - Semifinales',
     codigo: 'FUT-001'
   },

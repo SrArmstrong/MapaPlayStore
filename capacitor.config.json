@@ -1,6 +1,6 @@
 {
   "appId": "com.uteq.mapa",
-  "appName": "geo-escolar",
+  "appName": "MapaTrue",
   "webDir": "dist",
   "server": {
     "androidScheme": "https"

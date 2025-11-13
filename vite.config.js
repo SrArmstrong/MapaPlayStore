@@ -9,7 +9,7 @@ export default defineConfig({
     basicSsl(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['icon-192.png', 'icon-512.png'],
+      includeAssets: ['logo-192.png', 'logo-512.png'],
       manifest: {
         name: 'Mapa UTEQ',
         short_name: 'UTEQ',
@@ -19,13 +19,13 @@ export default defineConfig({
         theme_color: '#4caf50',
         icons: [
           {
-            src: 'logo_uteq192.png',
+            src: 'logo-192.png',
             sizes: '192x192',
             type: 'image/png',
             purpose: 'any maskable'
           },
           {
-            src: 'logo_uteq512.png',
+            src: 'logo-512.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'any maskable'
