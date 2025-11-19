@@ -265,6 +265,7 @@
   margin-bottom: clamp(1rem, 3vw, 1.5rem);
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: clamp(0.5rem, 2vw, 1rem);
   flex-wrap: wrap;
 }

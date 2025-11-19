@@ -7,7 +7,7 @@ import './WelcomeScreen.css';
 
 function WelcomeScreen({ onStartClick }) {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [activeSection, setActiveSection] = useState('main');
+  const [activeSection/*, setActiveSection*/] = useState('main');
   const [activeList, setActiveList] = useState(null);
   const [eventosData, setEventosData] = useState([]);
   const [showEventsList, setShowEventsList] = useState(false);
@@ -21,7 +21,7 @@ function WelcomeScreen({ onStartClick }) {
         name: e.title,
         location: e.description,
         coords: [e.latitude, e.longitude],
-        icon: '📍',
+        /*icon: '📍',*/
         color: '#a78bfa',
         codigo: e.codigo
       })));
@@ -67,7 +67,7 @@ function WelcomeScreen({ onStartClick }) {
         />
         
         <h1 className="main-title">
-          Mapa Simulator True
+          Mapa True
         </h1>
         
         <p className="subtitle">
@@ -81,7 +81,7 @@ function WelcomeScreen({ onStartClick }) {
           🗺️ Explorar Mapa
         </button>
       </div>
-
+{/*
       <div className="nav-tabs">
         {Object.keys(sections).map(section => (
           <button
@@ -99,7 +99,7 @@ function WelcomeScreen({ onStartClick }) {
           </button>
         ))}
       </div>
-
+*/}
       {/* Content Section */}
       <div className="content-section">
         <div 
