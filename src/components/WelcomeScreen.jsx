@@ -15,23 +15,42 @@ function WelcomeScreen({ onStartClick }) {
   useEffect(() => {
     setIsLoaded(true);
 
-    // Manejo de eventos cargados
     const handleEventosCargados = (evento) => {
       setEventosData(evento.datos.map(e => ({
         name: e.title,
         location: e.description,
         coords: [e.latitude, e.longitude],
-        /*icon: '📍',*/
+        icon: '📍',
         color: '#a78bfa',
         codigo: e.codigo
       })));
     };
 
+    const handleEventoActualizado = (evento) => {
+      setEventosData(prev =>
+        prev.map(e => e.codigo === evento.codigo ? {
+          ...e,
+          name: evento.title,
+          location: evento.description,
+          coords: [evento.latitude, evento.longitude]
+        } : e)
+      );
+    };
+
+    const handleEventoEliminado = (codigo) => {
+      setEventosData(prev => prev.filter(e => e.codigo !== codigo));
+    };
+
     bus.on('eventos.cargados', handleEventosCargados);
+    bus.on('evento.actualizado', handleEventoActualizado);
+    bus.on('evento.eliminado', handleEventoEliminado);
+
     eventService.cargarEventos();
 
     return () => {
       bus.off('eventos.cargados', handleEventosCargados);
+      bus.off('evento.actualizado', handleEventoActualizado);
+      bus.off('evento.eliminado', handleEventoEliminado);
     };
   }, []);
 
