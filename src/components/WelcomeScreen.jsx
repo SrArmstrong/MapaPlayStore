@@ -4,6 +4,7 @@ import logoReal from '../assets/logo.png';
 import bus from '../bus.js';
 import eventService from '../services/eventService.js';
 import './WelcomeScreen.css';
+import { Link } from "react-router-dom";
 
 function WelcomeScreen({ onStartClick }) {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -194,6 +195,19 @@ function WelcomeScreen({ onStartClick }) {
           )}
         </div>
       </div>
+      <footer className="footer">
+        
+        <span style={{ margin: "0 8px" }}>|</span>
+        <Link to="https://geolocalizaci-n-escolar.vercel.app/#/privacidad" className="footer-link">
+          Aviso de Privacidad
+        </Link>
+        <span style={{ margin: "0 8px" }}>|</span>
+        <Link to="/login" className="footer-link">
+          Login
+        </Link>
+        <span style={{ margin: "0 8px" }}>|</span>
+        
+      </footer>
     </div>
   );
 }

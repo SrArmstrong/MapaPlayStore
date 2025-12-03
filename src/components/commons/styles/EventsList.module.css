@@ -1,70 +1,47 @@
-/* Variables CSS para consistencia */
-:root {
-  --primary-color: #dc2626;
-  --text-light: white;
-  --text-dark: #1e3a8a;
-  --bg-transparent: rgba(255, 255, 255, 0.15);
-  --border-light: rgba(255, 255, 255, 0.3);
-  --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.3);
-  --shadow-medium: 0 4px 15px rgba(0, 0, 0, 0.1);
-  --shadow-heavy: 0 8px 25px rgba(0, 0, 0, 0.2);
-  --border-radius-sm: 10px;
-  --border-radius-md: 12px;
-  --border-radius-lg: 15px;
-  --border-radius-xl: 20px;
-  --transition: all 0.3s ease;
-}
+/* ========================================
+   BASE STYLES - MODO INTEGRADO
+   ======================================== */
 
-/* Estilos base responsivos */
-* {
-  box-sizing: border-box;
-}
-
-/* Estilos para modo integrado */
 .integratedContainer {
   width: 100%;
   height: 100%;
   background: transparent;
   display: flex;
   flex-direction: column;
-  padding: 0.5rem;
 }
 
 .integratedHeader {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   text-align: center;
-  padding: 0 0.5rem;
 }
 
 .integratedTitle {
   color: white;
-  font-size: clamp(1.5rem, 4vw, 2rem);
-  margin: 0 0 1rem 0;
+  font-size: 2rem;
+  margin: 0 0 1.5rem 0;
   font-weight: 700;
-  text-shadow: var(--shadow-light);
-  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .integratedSearchInput {
   width: 100%;
   max-width: 500px;
-  padding: 0.875rem 1.25rem;
-  border-radius: var(--border-radius-lg);
-  border: 2px solid var(--border-light);
-  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  padding: 1rem 1.5rem;
+  border-radius: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  font-size: 1.1rem;
   outline: none;
   background: rgba(255, 255, 255, 0.9);
-  color: var(--text-dark);
+  color: #1e3a8a;
   backdrop-filter: blur(10px);
-  transition: var(--transition);
-  margin: 0 auto;
+  transition: all 0.3s ease;
 }
 
 .integratedSearchInput:focus {
   border-color: rgba(255, 255, 255, 0.6);
   background: rgba(255, 255, 255, 1);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-heavy);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 .integratedSearchInput::placeholder {
@@ -74,10 +51,10 @@
 .integratedList {
   display: flex;
   flex-direction: column;
-  gap: 0.875rem;
-  max-height: 60vh;
+  gap: 1rem;
+  max-height: 400px;
   overflow-y: auto;
-  padding: 0.5rem 0.25rem;
+  padding: 1rem 0.5rem;
 }
 
 .integratedEventItem {
@@ -86,39 +63,40 @@
 
 .integratedEventButton {
   width: 100%;
-  padding: 1.25rem 1.5rem;
-  background: var(--bg-transparent);
+  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(15px);
   color: white;
   border: 2px solid rgba(255, 255, 255, 0.2);
-  border-radius: var(--border-radius-xl);
-  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  border-radius: 20px;
+  font-size: 1.1rem;
   cursor: pointer;
   text-align: left;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  transition: var(--transition);
-  box-shadow: var(--shadow-medium);
+  gap: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .integratedEventButton:hover {
   background: rgba(255, 255, 255, 0.25);
-  transform: translateY(-3px);
+  transform: translateY(-5px);
   border-color: rgba(255, 255, 255, 0.4);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
 }
 
 .integratedEventContent {
   display: flex;
   align-items: flex-start;
-  gap: 0.875rem;
+  gap: 1rem;
   flex: 1;
+  min-width: 0;
 }
 
 .eventIcon {
-  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  font-size: 1.5rem;
   margin-top: 0.2rem;
   flex-shrink: 0;
 }
@@ -128,50 +106,53 @@
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
-  gap: 0.25rem;
+  gap: 0.3rem;
   flex: 1;
   min-width: 0;
 }
 
 .eventTitle {
   font-weight: 700;
-  font-size: clamp(1rem, 3vw, 1.2rem);
+  font-size: 1.2rem;
   margin: 0;
-  line-height: 1.3;
-  word-break: break-word;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .eventDescription {
-  font-size: clamp(0.875rem, 2.5vw, 1rem);
+  font-size: 1rem;
   opacity: 0.9;
   line-height: 1.4;
   margin: 0;
-  word-break: break-word;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .eventCode {
-  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  font-size: 0.9rem;
   opacity: 0.8;
   white-space: nowrap;
   font-weight: 600;
   background: rgba(255, 255, 255, 0.2);
-  padding: 0.3rem 0.6rem;
-  border-radius: var(--border-radius-sm);
+  padding: 0.4rem 0.8rem;
+  border-radius: 10px;
   flex-shrink: 0;
 }
 
 .noResults {
   text-align: center;
-  padding: 2rem 1.5rem;
+  padding: 3rem 2rem;
   color: rgba(255, 255, 255, 0.8);
-  font-size: clamp(1rem, 3vw, 1.2rem);
+  font-size: 1.2rem;
   background: rgba(255, 255, 255, 0.1);
-  border-radius: var(--border-radius-lg);
+  border-radius: 15px;
   backdrop-filter: blur(10px);
-  margin: 1rem 0;
 }
 
-/* ESTILOS ORIGINALES DEL BOTÓN - MANTENIDOS EXACTAMENTE IGUAL */
+/* ========================================
+   BASE STYLES - MODO FLOTANTE
+   ======================================== */
+
 .toggleButton {
   position: fixed;
   right: 20px;
@@ -216,9 +197,9 @@
   overflow-y: auto;
   z-index: 9998;
   background-color: #fef2f2;
-  padding: clamp(1rem, 3vw, 1.5rem);
-  border-top-left-radius: var(--border-radius-xl);
-  border-top-right-radius: var(--border-radius-xl);
+  padding: 1.5em;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
   box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.15);
   animation: slideUp 0.3s ease-out;
 }
@@ -244,9 +225,9 @@
 
 .panelTitle {
   margin: 0 0 1em 0;
-  font-size: clamp(1.1rem, 3vw, 1.2rem);
+  font-size: 1.2em;
   font-weight: 600;
-  color: var(--primary-color);
+  color: #dc2626;
   text-align: center;
 }
 
@@ -254,14 +235,14 @@
   width: 100%;
   padding: 12px 16px;
   margin-bottom: 16px;
-  border-radius: var(--border-radius-md);
+  border-radius: 12px;
   border: none;
-  font-size: clamp(15px, 4vw, 16px);
+  font-size: 16px;
   outline: none;
   transition: all 0.2s ease;
   box-sizing: border-box;
   background-color: white;
-  color: var(--primary-color);
+  color: #dc2626;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
@@ -279,12 +260,12 @@
 
 .eventButton {
   width: 100%;
-  padding: clamp(14px, 4vw, 16px) clamp(16px, 4vw, 20px);
+  padding: 16px 20px;
   background-color: white;
-  color: var(--primary-color);
+  color: #dc2626;
   border: none;
-  border-radius: var(--border-radius-md);
-  font-size: clamp(15px, 4vw, 16px);
+  border-radius: 12px;
+  font-size: 16px;
   font-weight: 500;
   cursor: pointer;
   text-align: left;
@@ -296,110 +277,433 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
-/* Media Queries para ajustes específicos */
+.eventButton:hover {
+  background-color: #fee2e2;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.eventButton:active {
+  transform: translateY(0);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* Extra Small Devices (phones, 320px - 480px) */
 @media (max-width: 480px) {
-  .integratedContainer {
-    padding: 0.25rem;
-  }
-  
-  .integratedHeader {
+  /* Modo Integrado */
+  .integratedTitle {
+    font-size: 1.3rem;
     margin-bottom: 1rem;
   }
-  
-  .integratedList {
-    gap: 0.75rem;
-    padding: 0.25rem 0.125rem;
+
+  .integratedSearchInput {
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
+    max-width: 100%;
   }
-  
+
+  .integratedList {
+    gap: 0.8rem;
+    max-height: 350px;
+    padding: 0.8rem 0.3rem;
+  }
+
   .integratedEventButton {
-    padding: 1rem 1.25rem;
+    padding: 1rem 1.2rem;
+    gap: 1rem;
+    border-radius: 15px;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.75rem;
   }
-  
+
   .integratedEventContent {
+    gap: 0.8rem;
     width: 100%;
   }
-  
+
+  .eventIcon {
+    font-size: 1.3rem;
+  }
+
+  .eventTitle {
+    font-size: 1rem;
+  }
+
+  .eventDescription {
+    font-size: 0.9rem;
+  }
+
   .eventCode {
-    align-self: flex-end;
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+    align-self: flex-start;
   }
-  
+
+  .noResults {
+    padding: 2rem 1rem;
+    font-size: 1rem;
+  }
+
+  /* Modo Flotante */
+  .toggleButton {
+    right: 10px;
+    height: 44px;
+    min-width: 44px;
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+
+  .toggleButtonVisible {
+    bottom: calc(70vh - 20px);
+    width: 50px;
+    font-size: 18px;
+  }
+
+  .toggleButtonHidden {
+    bottom: 70px;
+  }
+
   .panel {
-    padding: 1rem;
-  }
-  
-  /* Ajuste responsivo solo para el botón en móviles muy pequeños */
-  @media (max-width: 320px) {
-    .toggleButton {
-      right: 15px;
-      height: 44px;
-      min-width: 44px;
-      font-size: 13px;
-    }
-    
-    .toggleButtonVisible {
-      width: 55px;
-      font-size: 18px;
-    }
-  }
-}
-
-@media (min-width: 768px) {
-  .integratedContainer {
-    padding: 1rem;
-  }
-  
-  .integratedList {
-    gap: 1rem;
-    padding: 1rem 0.5rem;
-  }
-  
-  .integratedEventButton {
-    padding: 1.5rem 2rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .integratedContainer {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .integratedList {
     max-height: 70vh;
+    padding: 1.2em 1em;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+
+  .panelTitle {
+    font-size: 1.1em;
+    margin-bottom: 0.8em;
+  }
+
+  .searchInput {
+    padding: 10px 14px;
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .eventList {
+    max-height: calc(70vh - 120px);
+  }
+
+  .eventButton {
+    padding: 12px 16px;
+    font-size: 14px;
+    gap: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .eventItem {
+    margin-bottom: 6px;
   }
 }
 
-/* Mejoras de accesibilidad */
+/* Small Devices (phones landscape, tablets portrait, 481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  /* Modo Integrado */
+  .integratedTitle {
+    font-size: 1.6rem;
+  }
+
+  .integratedSearchInput {
+    padding: 0.9rem 1.3rem;
+    font-size: 1rem;
+  }
+
+  .integratedList {
+    max-height: 380px;
+    gap: 0.9rem;
+  }
+
+  .integratedEventButton {
+    padding: 1.3rem 1.6rem;
+    gap: 1.2rem;
+  }
+
+  .eventIcon {
+    font-size: 1.4rem;
+  }
+
+  .eventTitle {
+    font-size: 1.1rem;
+  }
+
+  .eventDescription {
+    font-size: 0.95rem;
+  }
+
+  .noResults {
+    padding: 2.5rem 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  /* Modo Flotante */
+  .toggleButton {
+    right: 15px;
+  }
+
+  .toggleButtonVisible {
+    bottom: calc(65vh - 10px);
+    width: 55px;
+  }
+
+  .panel {
+    max-height: 65vh;
+    padding: 1.4em 1.3em;
+  }
+
+  .eventList {
+    max-height: calc(65vh - 130px);
+  }
+
+  .eventButton {
+    padding: 14px 18px;
+    font-size: 15px;
+  }
+}
+
+/* Medium Devices (tablets landscape, 769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .integratedSearchInput {
+    max-width: 600px;
+  }
+
+  .integratedList {
+    max-height: 420px;
+  }
+
+  .panel {
+    max-height: 55vh;
+    padding: 1.6em 2em;
+  }
+
+  .eventList {
+    max-height: calc(55vh - 140px);
+  }
+}
+
+/* Large Devices (desktops, 1025px - 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .integratedSearchInput {
+    max-width: 650px;
+  }
+
+  .integratedList {
+    max-height: 450px;
+  }
+
+  .panel {
+    max-height: 50vh;
+    max-width: 800px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 20px 20px 0 0;
+  }
+}
+
+/* Extra Large Devices (large desktops, 1441px+) */
+@media (min-width: 1441px) {
+  .integratedTitle {
+    font-size: 2.5rem;
+  }
+
+  .integratedSearchInput {
+    max-width: 700px;
+    padding: 1.2rem 1.8rem;
+    font-size: 1.2rem;
+  }
+
+  .integratedList {
+    max-height: 500px;
+    gap: 1.2rem;
+  }
+
+  .integratedEventButton {
+    padding: 1.8rem 2.5rem;
+    font-size: 1.2rem;
+  }
+
+  .eventIcon {
+    font-size: 1.8rem;
+  }
+
+  .eventTitle {
+    font-size: 1.4rem;
+  }
+
+  .eventDescription {
+    font-size: 1.1rem;
+  }
+
+  .eventCode {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .panel {
+    max-width: 900px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Landscape Orientation Adjustments */
+@media (max-height: 600px) and (orientation: landscape) {
+  .integratedTitle {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .integratedSearchInput {
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .integratedList {
+    max-height: 250px;
+    gap: 0.6rem;
+  }
+
+  .integratedEventButton {
+    padding: 0.8rem 1rem;
+    gap: 0.8rem;
+  }
+
+  .eventIcon {
+    font-size: 1.2rem;
+  }
+
+  .eventTitle {
+    font-size: 0.95rem;
+  }
+
+  .eventDescription {
+    font-size: 0.85rem;
+  }
+
+  .panel {
+    max-height: 80vh;
+  }
+
+  .eventList {
+    max-height: calc(80vh - 110px);
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .integratedEventButton {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  .integratedEventButton:active {
+    transform: scale(0.98);
+  }
+
+  .eventButton {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  .eventButton:active {
+    transform: scale(0.98);
+  }
+
+  .toggleButton {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  /* Aumentar áreas táctiles en móviles */
+  .toggleButton {
+    min-height: 48px;
+    min-width: 48px;
+  }
+
+  .integratedEventButton,
+  .eventButton {
+    min-height: 48px;
+  }
+}
+
+/* Scrollbar Styling */
+.integratedList::-webkit-scrollbar,
+.eventList::-webkit-scrollbar {
+  width: 8px;
+}
+
+.integratedList::-webkit-scrollbar-track,
+.eventList::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.integratedList::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+.eventList::-webkit-scrollbar-thumb {
+  background: rgba(220, 38, 38, 0.3);
+  border-radius: 10px;
+}
+
+.integratedList::-webkit-scrollbar-thumb:hover,
+.eventList::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Reducir scrollbar en móviles */
+@media (max-width: 768px) {
+  .integratedList::-webkit-scrollbar,
+  .eventList::-webkit-scrollbar {
+    width: 4px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .toggleButton {
+    display: none;
+  }
+
+  .panel {
+    position: relative;
+    max-height: none;
+    box-shadow: none;
+    border: 1px solid #ccc;
+    page-break-inside: avoid;
+  }
+
+  .integratedEventButton,
+  .eventButton {
+    page-break-inside: avoid;
+  }
+}
+
+/* Accesibilidad - Focus visible */
+.integratedSearchInput:focus-visible,
+.searchInput:focus-visible {
+  outline: 3px solid rgba(59, 130, 246, 0.5);
+  outline-offset: 2px;
+}
+
+.integratedEventButton:focus-visible,
+.eventButton:focus-visible,
+.toggleButton:focus-visible {
+  outline: 3px solid rgba(59, 130, 246, 0.5);
+  outline-offset: 2px;
+}
+
+/* Reducción de movimiento para accesibilidad */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-}
-
-/* Mejora del scroll para navegadores WebKit */
-.integratedList::-webkit-scrollbar,
-.eventList::-webkit-scrollbar {
-  width: 6px;
-}
-
-.integratedList::-webkit-scrollbar-track,
-.eventList::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 3px;
-}
-
-.integratedList::-webkit-scrollbar-thumb,
-.eventList::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 3px;
-}
-
-.integratedList::-webkit-scrollbar-thumb:hover,
-.eventList::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.5);
 }

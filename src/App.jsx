@@ -1,24 +1,15 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import MapComponent from './components/map/MapComponent';
+import AdminPanel from './pages/AdminPanel';
+import Login from "./pages/Login";
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import ProtectedRoute from './components/ProtectedRoute';
 import './index.css';
-
-function VisitTracker() {
-  const location = useLocation();
-
-  useEffect(() => {
-    // Contar visita cuando la ruta es /map
-
-  }, [location.pathname]);
-
-  return null; // Este componente no renderiza nada
-}
 
 function App() {
   return (
-    <Router>
-      
+    <Router>   
       <div style={{
         position: 'relative',
         height: '100vh',
@@ -28,8 +19,10 @@ function App() {
       }}>
         <Routes>
           <Route path="/" element={<Home />} />
-          
           <Route path="/map" element={<MapComponent />} />
+          <Route path="/privacidad" element={<PrivacyPolicy />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/admin" element={ <ProtectedRoute> <AdminPanel /> </ProtectedRoute>} />
         </Routes>
       </div>
     </Router>
